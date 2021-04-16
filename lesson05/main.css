@@ -5,15 +5,84 @@
 /*
     Your main styles here...
 */
+body {
+    margin: 0px;
+}
+/* this is to give a border to each 3 sections */
+#header, #main, #footer {
+    border: solid 1px #000;
+}
+#header {
+    background-color: #EEEEEE;
+    /* vw: viewport width, vh: viewport height */
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 30vw;
+
+    position: fixed;    /*the header panel won't scroll and stay fixed. It will anchor an element (ignore scrolling)*/
+    padding: 40px;
+}
+
+#main, #footer {
+    margin-left: 30vw;
+    /*width: 70vw;     /*the viewport must accumulate to 100 */
+    padding: 40px;
+}
+
+/* Difference between padding and margin*/
+/* Padding is the space inside the elements. so giving a space around the padding box
+Margin is like the space from the edge of the browser. its more global */
+/* Padding: Space between the container border and the stuff inside of the container
+   Margin: Space between the container and its siblings and/or parent container */
+/* grid: A way of establishing a global page layout */
+/* flexbox: way of creating flexible layouts (for sizing and position containers)
+@media: media query: a way of setting CSS rules based on the dimension of your screen */
 
 
 
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.card {
+    width: 50%;
+    /* border: solid 1px #000; */
+    padding: 20px;
 
+}
 
+.card img{
+    width: 100%; /*images now stretch to entire width of card */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
 
-
-
+.card h3, .card p{
+    margin: 5px;
+}
 @media screen and (max-width: 800px) {
     /* Your mobile styles here */
+    .card {
+        width: 100%;
+    }
+
+    #header {
+        background-color: #EEEEEE;
+        left: 0px;
+        top: 0px;
+        height: 200px;
+        width: 100vw;
+        position: fixed;
+        padding: 10px;
+    }
+
+    #main, #footer {
+        margin-left: 00vw;
+        padding: 20px;
+    }
+    #main {
+        margin-top: 200px;
+    }
 }
