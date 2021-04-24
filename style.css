@@ -6,9 +6,20 @@
 body {
     margin: 0px;
     font-family: Arial, sans-serif;
+    background-color: beige;
+
+    
+}
+.picture {
+    display: flex;
+    height: 50%;
+    flex-direction: row;
 }
 header, section {
     padding: 20px;
+    grid-auto-rows: auto;
+    
+
 }
 p, li {
     line-height: 1.5em;
