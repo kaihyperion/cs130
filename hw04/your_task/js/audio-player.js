@@ -118,7 +118,8 @@ const AudioPlayer = (selector, audioFile) => {
         rwdButton = containerElement.querySelector('#rwd');
         ffwdButton = containerElement.querySelector('#ffwd');
         sliderInput = containerElement.querySelector('#player-time');
-
+        
+       
         console.log(audio, playButton);
         // attach events to event handlers (i.e. functions)
         audio.ontimeupdate = jumpToTime;
@@ -126,9 +127,10 @@ const AudioPlayer = (selector, audioFile) => {
         audio.onloadeddata = function() {
             console.log("preview loaded");
             //resetTime();
-            //this.pause();
+            // this.pause();
         };
         playButton.onclick = this.togglePlay;
+        
         rwdButton.onclick = skipBackward;
         ffwdButton.onclick = skipForward;
         sliderInput.oninput = customTime;
