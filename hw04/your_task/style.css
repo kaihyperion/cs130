@@ -229,6 +229,7 @@ header .fa-search {
     line-height: 30px;
     align-items: center;
     padding-left: 2px;
+    
 }
 
 .track-item {
@@ -243,11 +244,16 @@ header .fa-search {
     background: #F0F0F0;
 }
 .track-item i.play-track {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s, linear;
 }
 .track-item.preview:hover i.play-track {
     position: relative;
-    display: inline;
+    /* display: inline; */
+    visibility: visible;
+    opacity: 1;
     left: -1.4em;
     top: 0.4em;
     color: #fff;
@@ -319,10 +325,11 @@ footer .track-item:hover {
     align-items: center;
     margin-bottom: 10px;
 }
-
-.player .controls i:hover {
+.player .controls i {
     color: #777;
 }
+
+
 .player .fa-play-circle, .player .fa-pause-circle {
     font-size: 1.7em;
 }
