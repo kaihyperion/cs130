@@ -154,9 +154,9 @@ ul:after {clear: both; content: ""; display: block;}
 .main_02 .leftslide .swiper-wrapper {height: 100%; width: 100%; position: relative;}
 .main_02 .leftslide .swiper-wrapper li {display: block; height: 100%; overflow: hidden;}
 .main_02 .leftslide .swiper-wrapper li span {background-position: left center; display: block; width: 100%; height: 100%; background-size: cover;}
-.main_02 .leftslide .swiper-wrapper li .img01 { background-image: url(/images/image1.jpeg); }
-.main_02 .leftslide .swiper-wrapper li .img02 { background-image: url(/images/image2.jpeg); }
-.main_02 .leftslide .swiper-wrapper li .img03 { background-image: url(/images/image3.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img01 { background-image: url(/webDesign/images/image1.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img02 { background-image: url(/webDesign/images/image2.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img03 { background-image: url(/webDesign/images/image3.jpeg); }
 
 .main_02 .leftslide .button {position: absolute; right: 40px; top: 50%; transform: translateY(-50%); z-index: 999;}
 .main_02 .leftslide .button button {cursor: pointer; background: none; border: none;}
@@ -176,7 +176,7 @@ ul:after {clear: both; content: ""; display: block;}
 .main_02 .upslide ul li {display: block; height: 100%; overflow: hidden;}
 .main_02 .upslide ul li span {display: block; width: 100%; height: 100%; background-size: cover;}
 
-.main_02 .upslide ul li .up01 { background-image: url(/video/clean-group.gif);}
+.main_02 .upslide ul li .up01 { background-image: url(/webDesign/video/clean-group.gif);}
 
 
 .main_02 .downslide {width: 50%; float: right; height: 50%;}
@@ -223,7 +223,7 @@ ul:after {clear: both; content: ""; display: block;}
 .main_03 .rightbox p {font-size: 18px; color: #555; line-height: 2;}
 
 
-.main_04 {text-align: center; color: #fff; background: url(/images/KakaoTalk_Image_2021-05-28-17-37-44.jpeg); height: 376px; display: flex; justify-content: center; align-items: center;
+.main_04 {text-align: center; color: #fff; background: url(/webDesign/images/KakaoTalk_Image_2021-05-28-17-37-44.jpeg); height: 376px; display: flex; justify-content: center; align-items: center;
     -ms-flex-pack: start;
     background-attachment: fixed;
     background-position: bottom center;
