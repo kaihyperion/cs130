@@ -127,9 +127,9 @@ ul:after {clear: both; content: ""; display: block;}
 }
 .Main .slide li .bg {background-position: center center; background-size: cover; background-repeat: no-repeat; position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 
-.Main .slide li.slide2 .bg {background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image1.jpeg");}
+.Main .slide li.slide2 .bg {background-image: url(images/image1.jpeg);}
 
-.Main .slide li.slide3 .bg {background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image2.jpeg")}
+.Main .slide li.slide3 .bg {background-image: url(images/image2.jpeg);}
 
 
 
