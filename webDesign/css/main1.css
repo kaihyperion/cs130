@@ -154,9 +154,9 @@ ul:after {clear: both; content: ""; display: block;}
 .main_02 .leftslide .swiper-wrapper {height: 100%; width: 100%; position: relative;}
 .main_02 .leftslide .swiper-wrapper li {display: block; height: 100%; overflow: hidden;}
 .main_02 .leftslide .swiper-wrapper li span {background-position: left center; display: block; width: 100%; height: 100%; background-size: cover;}
-.main_02 .leftslide .swiper-wrapper li .img01 { background-image: url(/webDesign/images/image1.jpeg); }
-.main_02 .leftslide .swiper-wrapper li .img02 { background-image: url(/webDesign/images/image2.jpeg); }
-.main_02 .leftslide .swiper-wrapper li .img03 { background-image: url(/webDesign/images/image3.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img01 { background-image: url(https://kaihyperion.github.io/cs130/webDesign/images/image1.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img02 { background-image: url(https://kaihyperion.github.io/cs130/webDesign/images/image2.jpeg); }
+.main_02 .leftslide .swiper-wrapper li .img03 { background-image: url(https://kaihyperion.github.io/cs130/webDesign/images/image3.jpeg); }
 
 .main_02 .leftslide .button {position: absolute; right: 40px; top: 50%; transform: translateY(-50%); z-index: 999;}
 .main_02 .leftslide .button button {cursor: pointer; background: none; border: none;}
