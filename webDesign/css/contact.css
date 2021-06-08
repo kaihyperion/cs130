@@ -1,0 +1,100 @@
+
+.contact {margin: 130px 0 170px;}
+.contact .box {}
+.contact .title {margin-bottom: 100px; position: relative;}
+.contact .leftdl dt {font-size: 80px; color: #222222; font-family: 'Poppins', sans-serif; font-weight: 600; display: inline-block; position: relative;}
+.contact .leftdl dt:after {content:""; display: block; position: absolute; left: -30px; top: 0; width: 68px; height: 68px; background: #fee101;border-radius: 100px; z-index: -1;}
+.contact .leftdl dd {font-size: 16px; color: #555; word-break: keep-all; }
+
+.contact .right_title {position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+
+.contact .right_title ul li:nth-of-type(1) {margin-bottom: 30px;}
+.contact .right_title ul li:nth-of-type(n+2) {float: left; width: 50%;}
+
+.contact .right_title ul li dt {font-size: 20px; margin-bottom: 10px; font-family: 'Poppins', sans-serif; font-weight: bold;}
+.contact .right_title ul li dd {font-size: 15px; color: #888;}
+.contact .right_title ul li dd a {color: #888;}
+
+
+
+.contact .formbox ul li:after {clear: both; content: ""; display: block;}
+.contact .formbox ul li {width: calc(100%/3 - 20px/3); float: left; border-bottom: 3px solid #555555; margin-bottom: 30px; display: flex; align-items: center; margin-right: 10px; height: 60px; position: relative;}
+
+.contact .formbox ul li:nth-of-type(3n) {margin-right: 0;}
+.contact .formbox ul li:nth-of-type(6) .head {width: 35%;}
+.contact .formbox ul li:nth-of-type(6) .cont {width: 65%;}
+
+
+.contact .formbox ul li .head {width: 20%; box-sizing: border-box;font-weight: 600;}
+.contact .formbox ul li .head span {color: red;}
+.contact .formbox ul li .cont {width: 80%;}
+.contact .formbox ul li .cont input {width: 100%; border: none; padding: 10px 0 10px 10px; box-sizing: border-box; font-size: 16px;}
+.contact .formbox input::placeholder {font-family: 'Noto Sans KR', sans-serif;}
+
+.contact .formbox ul li select {width: 100%; padding: 10px 0; border: none; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; font-size: 16px;}
+
+
+.contact .formbox .textarea {border-bottom: 3px solid #555; margin-top: 30px;}
+.contact .formbox .textarea h2 {margin-bottom:10px; font-weight: 600; font-size: 18px;}
+.contact .formbox .textarea h2 span {color: red;}
+.contact .formbox .textarea textarea::placeholder {font-family: 'Noto Sans KR', sans-serif;}
+.contact .formbox .textarea textarea {width: 100%; box-sizing: border-box; padding: 10px; border: none; font-size: 16px; resize: none; transition: height 0.3s; height: 50px;}
+.contact .formbox .textarea textarea:focus {height: 300px;}
+
+.contact .b_form {margin-top: 30px;}
+.contact .b_form:after {clear: both; content: ""; display: block;}
+.contact .b_form .left {margin-bottom: 20px;}
+.contact .b_form .file {display: inline-block; padding: 0 40px; color: #fff; font-size: inherit; line-height: normal; vertical-align: middle; background-color: #333; cursor: pointer; height: 50px; line-height: 50px;}
+.contact .b_form .file input[type="file"] {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;}
+.contact .b_form .left span {font-size: 18px; color: #666; margin-left: 20px;}
+
+.contact .b_form .right {text-align: center;}
+.contact .b_form button {width: 180px; height: 50px; background: #fee101; line-height: 50px; border: none; cursor: pointer; font-size: 18px; color: #222;}
+
+/*ì¶”ê°€*/
+.contact .captcha {margin: 40px 0;}
+.contact .captcha h2 {font-size: 18px; margin-bottom: 15px;}
+.contact .captcha .box {height: 40px;}
+.contact .captcha .box img {vertical-align: middle;}
+.contact .captcha input {width: 200px; height: 100%; box-sizing: border-box; padding: 0 10px; font-size: 16px;}
+
+
+@media screen and (max-width: 1418px) {
+    .contact .wrap {padding-left: 10%; box-sizing: border-box;}
+}
+
+@media screen and (max-width: 1066px) {
+    
+    .contact {margin: 100px 0; display: block; height: auto;}
+    .contact .box {display: block;}
+    .contact .wrap {padding: 0 10%; box-sizing: border-box;}
+    .contact .box {display: block; vertical-align: middle; width: 100%;}
+    .contact .formbox ul li {display: block; padding-bottom: 0; width: 100%; float: none; height: auto; margin-right: 0;}
+    .contact .formbox ul li:nth-of-type(6) .head {width: auto;}
+    .contact .formbox ul li:nth-of-type(6) .cont {width: auto;}
+    .contact .formbox ul li .head {width: 100%; display: block; padding-left: 0; margin-bottom: 5px;}
+    .contact .formbox ul li .cont {width: 100%; display: block;}
+    .contact .b_form .left {float: none;}
+    .contact .b_form .right {float: none; text-align: center; margin-top: 20px;}
+    .contact .title {margin-bottom: 50px;}
+    .contact .leftdl dt:after {content:""; display: block; position: absolute; left: -5px; top: 10px; width: 25px; height: 25px; background: #fee101;border-radius: 100px; z-index: -1;}
+    .contact .title dt {font-size: 40px;}
+    .contact .title dd {font-size: 14px;}
+    .contact .formbox .textarea h2 {font-size: 16px; word-break: keep-all;}
+    .contact .formbox ul li .cont input {font-size: 14px; padding: 10px 0 10px 0px;}
+    .contact .formbox ul li select {font-size: 14px; padding: 10px 0 10px 0px;}
+    .contact .formbox .textarea textarea {font-size: 14px; padding: 10px 10px 10px 0; box-sizing: border-box;}
+    .contact .b_form .left span {font-size: 14px; display: block; margin-left: 0; margin-top: 10px;}
+    .contact .b_form .file {font-size: 14px;}
+    .contact .b_form button {font-size: 16px;}
+    
+    .contact span.select_box .select_cover .select_placeholder {padding-left: 0;}
+    
+    
+    .contact .right_title {position: static; transform: none; margin-top: 20px;}
+    
+    
+    .contact .captcha input {width: 150px;}
+    
+}
+

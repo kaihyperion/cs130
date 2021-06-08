@@ -9,6 +9,21 @@ html, body {font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden;}
 .wrap:after,
 ul:after {clear: both; content: ""; display: block;}
 
+/* designing the scrollbar for mouse */
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color:lightskyblue;
+}
+
 
 .main_header {position: fixed;
         left: 0;
@@ -36,37 +51,42 @@ ul:after {clear: both; content: ""; display: block;}
 .Main .slide li {height: 100vh; position: relative; overflow: hidden;}
 .Main .slide li .bg {transform: scale(1.1);}
 
-.Main .slide li .txtwrap {position: absolute; top: 50%; transform: translate(-50%, -50%); width: 70%; left: 50%; max-width: 1200px;}
+.Main .slide li .txtwrap {position: absolute; top: 50%; transform: translate(-50%, -50%); width: 70%; left: 50%; max-width: 1200px;z-index: 1}
 
 /* .Main .slide li .textbox {} */
 .Main .slide li .textbox dl {color: #fff; line-height: 1;  margin-bottom: 55px;}
 .Main .slide li .textbox dl dt {font-size: 80px; line-height: 1.1; font-weight: bold; margin-bottom: 30px;}
 .Main .slide li .endt {font-size: 80px; font-weight: bold; font-family: 'Poppins', sans-serif;}
-.Main .slide li .textbox dl dd {font-size: 30px;}
-.Main .slide li .textbox p {color: #fff; font-size: 15px; font-family: 'Poppins', sans-serif; font-weight: normal;  display: inline-block;}
-.Main .slide li .textbox p img {margin-left: 10px;}
+.Main .slide li .textbox dl dd {font-size: 30px; line-height: 1.4;}
+.Main .slide li .textbox p {display: inline-block; padding: 15px 40px; border: 1px solid white; border-radius: 100px; font-size: 20px; color: white; box-sizing: border-box;font-family: 'Poppins', sans-serif; font-weight: normal; transition: 0.6s;z-index: 1000;}
 
-.Main .slide li video {-webkit-transform: translateX(-50%) translateY(-50%); 
-    -moz-transform: translateX(-50%) translateY(-50%); 
-    -ms-transform: translateX(-50%) translateY(-50%); 
-    -o-transform: translateX(-50%) translateY(-50%); 
-    transform: translateX(-50%) translateY(-50%); 
+/* Adding hover effect */
+.Main .slide li .textbox p:hover {
+    color: rgba(255,255,255,1);
+    font-size: 27px;
+    transition-property: all;
+    transition: all .6s ease-in-out;
+    background: #fee101; color: #000; border: 1px solid #fee101;
+}
+.Main .slide li .textbox p img {margin-left: 10px; font-size: 50px;}
+
+.Main .slide li video {
+    
     position: absolute; 
-    top: 50%; 
-    left: 50%; 
+    object-fit: cover; 
+    
+    /* top: -50%;
+    left: -50%; */
     min-width: 100%; 
     min-height: 100%; 
     width: auto; 
     height: auto; 
-    z-index: -100;
+    z-index: -1000; /*push it all the way down*/
 }
-.Main .slide li.slide1:before {background: rgba(0,0,0,0.5); width: 100%; height: 100%; position: absolute; left: 0; top: 0; content: ""; z-index: -1;}
+.Main .slide li.slide1:before {background: rgba(100,150,235,.55); width: 100%; height: 100%; position: absolute; left: 0; top: 0; content: ""; z-index: -1;}
 
-.Main .slide li .imgbox img {-webkit-transform: translateX(-50%) translateY(-50%); 
-    -moz-transform: translateX(-50%) translateY(-50%); 
-    -ms-transform: translateX(-50%) translateY(-50%); 
-    -o-transform: translateX(-50%) translateY(-50%); 
-    transform: translateX(-50%) translateY(-50%); 
+.Main .slide li .imgbox img {
+
     position: absolute; 
     top: 50%; 
     left: 50%; 
@@ -85,7 +105,7 @@ ul:after {clear: both; content: ""; display: block;}
 .Main .slide li.slide3 .textbox, 
 .Main .slide li.slide3 .textbox {float: right;}
 
-/*마우스휠*/
+/* Mouse Scroll here */
 .Main .mousescroll {position: absolute; bottom: 50px; text-align: center; left: 50%; transform: translateX(-50%);}
 .Main .mousescroll p {color: #fff; margin-bottom: 10px;}
 .Main .mousescroll span {width: 28px; height: 42px; box-sizing: border-box; border: 2px solid #fff; border-radius: 50px; display: inline-block; position: relative;}
@@ -103,9 +123,10 @@ ul:after {clear: both; content: ""; display: block;}
     }
 }
 
-.Main .page {width: 1px; height: 200px; background: rgba(255,255,255,0.5); position: absolute; right: 60px; top: 50%; transform: translateY(-50%); content: "";}
+
+.Main .page {width: 1px; height: 200px; background: rgba(255,255,255,1); position: absolute; right: 60px; top: 50%; transform: translateY(-50%); content: "";}
 .Main .page span {display: inline-block; width: 3px; position: absolute; height: 100px; background: #fff; left: 50%; transform: translateX(-50%);}
-.Main .page span p {color: #fff; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-weight: 500; font-size: 14px;width: auto; white-space: nowrap;}
+.Main .page span p {color: #fff; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-weight: 500; font-size: 20px;width: auto; white-space: nowrap;}
 
 .Main .progressbar {width: 100%; position: absolute; bottom: 0; left: 0; height: 3px; display: block;
     background: rgba(0,0,0,0.5);
@@ -114,12 +135,13 @@ ul:after {clear: both; content: ""; display: block;}
 .Main .progressbar span.complete {width: 100%;}
 
 
-/*이미지 변경*/
-.slick-active .bg { animation: bgplay 10s;}
+/* Animation to switch images every 15 seconds */
+.slick-active .bg { animation: bgplay 15s;}
 
+/* Changed animation seconds */
 @keyframes bgplay{
     0%{
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
     100%{
         transform: scale(1);
@@ -127,22 +149,25 @@ ul:after {clear: both; content: ""; display: block;}
 }
 .Main .slide li .bg {background-position: center center; background-size: cover; background-repeat: no-repeat; position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 
-.Main .slide li.slide2 .bg {background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image1.jpeg");}
+.Main .slide li.slide2 .bg:before {background: rgba(0, 0, 0, 0.4); width: 100%; height: 100%; position: absolute; left: 0; top: 0; content: ""; z-index: -1;}
 
-.Main .slide li.slide3 .bg {background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image2.jpeg");}
+.Main .slide li.slide2 .bg {background-image: url(/images/good_team.jpeg);}
+.Main .slide li.slide3 .bg:before {background: rgba(0,0,0,.6); width: 100%; height: 100%; position: absolute; left: 0; top: 0; content: ""; z-index: -1;}
+
+.Main .slide li.slide3 .bg {background-image: url(/images/image1.jpeg);}
 
 
 
 .main_01 {padding: 150px 0;}
 .main_01 .title {font-size: 30px; font-weight: 600; margin-bottom: 35px; position: relative; display: inline-block; font-family: 'Poppins', sans-serif; font-weight: 500;}
-.main_01 .title:after {content: ""; position: absolute; bottom: 0; width: 100%; height: 50%; background:#fee101; left: 0; z-index: -1;}
+.main_01 .title:after {content: ""; position: absolute; bottom: 0; width: 100%; height: 50%; background:lightblue; left: 0; z-index: -1;}
 
 .main_01 .aos_body_box {display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;}
 .main_01 .bodybox1 {flex: 0 0 40%;}
 .main_01 .bodybox2 {flex:  0 0 60%;}
 .main_01 .bodybox1 dl {font-size: 48px;}
 .main_01 .bodybox1 dl dd {font-weight: bold;}
-.main_01 .bodybox2 p {font-size: 18px; color: #888; line-height: 2;}
+.main_01 .bodybox2 p {font-size: 21px; color: black; line-height: 2;}
 
 
 /**/
@@ -153,22 +178,23 @@ ul:after {clear: both; content: ""; display: block;}
 .main_02 .leftslide div {width: 100%; height: 100%;}
 .main_02 .leftslide .swiper-wrapper {height: 100%; width: 100%; position: relative;}
 .main_02 .leftslide .swiper-wrapper li {display: block; height: 100%; overflow: hidden;}
-.main_02 .leftslide .swiper-wrapper li span {background-position: left center; display: block; width: 100%; height: 100%; background-size: cover;}
-.main_02 .leftslide .swiper-wrapper li .img01 { background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image1.jpeg"); }
-.main_02 .leftslide .swiper-wrapper li .img02 { background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image2.jpeg"); }
-.main_02 .leftslide .swiper-wrapper li .img03 { background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image3.jpeg"); }
+.main_02 .leftslide .swiper-wrapper li span {background-position: center; display: block; width: 100%; height: 100%; object-fit:none;}
+
+.main_02 .leftslide .swiper-wrapper  li .img01 { background-image: url(/images/front_entrance.jpeg);background-size:cover;}
+.main_02 .leftslide .swiper-wrapper  li .img02 { background-image: url("https://kaihyperion.github.io/cs130/webDesign/images/image2.jpeg"); background-size:cover;}
+.main_02 .leftslide .swiper-wrapper  li .img03 { background-image: url(/images/banner.jpeg); background-size:cover;}
 
 .main_02 .leftslide .button {position: absolute; right: 40px; top: 50%; transform: translateY(-50%); z-index: 999;}
 .main_02 .leftslide .button button {cursor: pointer; background: none; border: none;}
 .main_02 .leftslide .button .next {margin-bottom: 10px;}
 
-.main_02 .leftslide .box1 {position: absolute; bottom: 30px; width: 100%; height: auto; color: #fff; z-index: 999; left: 30px;}
+.main_02 .leftslide .box1 {position: absolute; bottom: 30px; width: 100%; height: auto; color: yellow; z-index: 100; left: 30px;}
 
-.main_02 .box1 ul {display: block; font-size: 20px; font-weight: 100; margin-bottom: 5px;}
+.main_02 .box1 ul {display: block; font-size: 25px; font-weight: 400; margin-bottom: 2px;}
 .main_02 .box1 .swiper-progress-bar {width: 40% !important; height: 2px !important; 
-    background: rgba(255,255,255,0.5);
+    background: (255,255,255,.5);
     display: inline-block; vertical-align: super; position: relative;}
-.main_02 .box1 .slide_progress-bar {position: absolute; height: 2px; background: #fff; width: 0; clear: both; bottom: 0; left: 0;}
+.main_02 .box1 .slide_progress-bar {position: absolute; height: 2px; background: yellow; width: 0; clear: both; bottom: 0; left: 0;}
 .main_02 .box1 .slide_progress-bar.complete {width: 100%;}
 
 .main_02 .upslide {width: 50%; float: right; height: 50%;}
@@ -183,17 +209,140 @@ ul:after {clear: both; content: ""; display: block;}
 .main_02 .downslide ul {width: 100%; height: 100%; position: relative;}
 .main_02 .downslide .slick-list div {height: 100%;}
 
+/* This is strictly for the textbox in main_02 */
 .main_02 .downslide ul li {display: flex !important; height: 100%; justify-content: center; text-align: left; flex-direction: column; padding-left: 10%; box-sizing: border-box;}
+/* This is strictly for the Title */
 .main_02 .downslide ul li p {font-size: 30px; position: relative; opacity: 0;}
-.main_02 .downslide ul li p:before {width: 42px; height: 42px; border-radius: 100%; background: #fee101; position: absolute; left: -20px; top: -15px; content: ""; z-index: -1;}
-.main_02 .downslide ul li dl dt {font-size: 50px; font-weight: bold; margin-bottom: 35px; font-family: 'Poppins', sans-serif; letter-spacing: -5px; overflow: hidden;}
+/* .main_02 .downslide ul li p:before {width: 42px; height: 42px; border-radius: 25%; background: lightblue; position: absolute; left: -20px; top: -15px; content: ""; z-index: -1;} */
+.main_02 .downslide ul li p:before {width: 42px; height: 42px; border-radius: 25%; background: lightblue; position: absolute; left: -20px; top: -15px; content: ""; z-index: -1;}
+
+/* .main_02 .downslide ul li dl dt {
+    font-weight: 500;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+.main_02 .downslide ul li dl dt  {
+    display: inline-block;
+    line-height: 1em;
+  } */
+/* This is strictly for the body paragraphs */
+.main_02 .downslide ul li dl dt {font-size: 50px; font-weight: bold; margin-bottom: 15px; font-family: 'Lato', sans-serif; letter-spacing: -5px; overflow: hidden;} 
+/* .main_02 .downslide ul li dl dt {font-size: 3.5em; font-weight: 700; margin-bottom: 35px; font-family: 'Lato', sans-serif; letter-spacing: -5px; overflow: hidden;} */
+
 .main_02 .downslide ul li dl dt span {display: inline-block;}
 
-.main_02 .downslide ul li dl dd {font-size: 20px; color: #444; opacity: 0;}
+/* body body */
+.main_02 .downslide ul li dl dd {font-size: 23px; color: #444; opacity: 0;}
+.main_02 .downslide ul li dl dd img {width: 23%; height: auto;}
+.container ul {
+    
+    margin: 0;
+    margin-top: 15px;
+    list-style: none;
+    position: relative;
+    padding: 1px 100px;
+    color: black;
+    font-size: 13px;
+  }
+  .container ul:before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    border-left: 2px dashed blue;
+  }
+  .container ul li {
+    position: relative;
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+    padding: 2px;
+    
+    border-radius: 7px;
+    width: 270px;
+  }
+  .container ul li:not(:first-child) {
+    margin-top: 42px;
+  }
+  .container ul li > span {
+    width: 2px;
+    height: 100%;
+    background: green;
+    left: -30px;
+    top: 0;
+    position: absolute;
+  }
+  .container ul li > span:before, .container ul li > span:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid lightskyblue;
+    position: absolute;
+    background: #86b7e7;
+    left: -5px;
+    top: 0;
+  }
+  .container ul li span:after {
+    top: 100%;
+  }
+  .container ul li > div {
+    margin-left: 10px;
+  }
+  .container div .title{
+    font-weight: 600;
+    font-size: 23px;
+    align-items: center;
+  }
+  .container div .info {
+    font-weight: 300;
+  }
+  .container div > div {
+    margin-top: 2px;
+  }
+  .container span.number {
+    height: 100%;
+  }
+  .container span.number span {
+    position: absolute;
+    font-size: 20px;
+    left: -70px;
+    font-weight: bold;
+  }
+  .container span.number span:first-child {
+    top: 0;
+  }
+  .container span.number span:last-child {
+    top: 100%;
+  }
 
-.main_02 .slick-active p {animation:  text 0.8s .1s both;}
-.main_02 .slick-active dl dt span{animation: text2 0.8s .1s both;}
-.main_02 .slick-active dl dd {animation:  text 0.8s .5s both;}
+/* 
+.swiper-slide .text-wrapper{
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+.swiper-slide .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: black;
+    transform-origin: 0 50%;
+} */
+
+  
+/* .swiper-slide {
+    display: inline-block;
+    line-height: 1em;
+} */
+.main_02 .slick-active p {animation: text 0.8s .1s both;}
+.main_02 .slick-active dl dt span{animation: text2  0.8s .1s both;}
+.main_02 .slick-active dl dd {animation: text 0.8s .5s both;}
 
 .main_02 .downslide ul li dl dt span:nth-of-type(2) {animation-delay: 0.2s}
 .main_02 .downslide ul li dl dt span:nth-of-type(3) {animation-delay: 0.3s}
@@ -209,9 +358,17 @@ ul:after {clear: both; content: ""; display: block;}
     0% { opacity: 0; transform: translateY(30px);}
     100% {opacity: 1; transform: translateY(0);}
 }
+@keyframes text2 {
+    0%{
+        transform: translateY(100px) rotate(-45deg);
+    }
+    100%{
+        transform: translateY(0) rotate(0);
+    }
+}
 
 /**/
-.main_03 {padding: 150px 0; background: #fee101;}
+.main_03 {padding: 150px 0; background: lightblue;}
 .main_03 .title {font-size: 30px; font-weight: 600; margin-bottom: 35px; position: relative; display: inline-block; z-index: 1; font-family: 'Poppins', sans-serif; font-weight: 500;}
 .main_03 .title:after {content: ""; position: absolute; bottom: 0; width: 100%; height: 50%; background:#fff; left: 0; z-index: -1;}
 
@@ -222,18 +379,22 @@ ul:after {clear: both; content: ""; display: block;}
 .main_03 .leftbox dl dd {font-weight: bold;}
 .main_03 .rightbox p {font-size: 18px; color: #555; line-height: 2;}
 
-
-.main_04 {text-align: center; color: #fff; background: url(https://kaihyperion.github.io/cs130/webDesign/images/KakaoTalk_Image_2021-05-28-17-37-44.jpeg); height: 376px; display: flex; justify-content: center; align-items: center;
+.main_04:before {
+    background:rgba(0, 0, 0, 0.4)
+}
+.main_04 {text-align: center; color: black; background: lightblue; height: 376px; display: flex; justify-content: center; align-items: center;
     -ms-flex-pack: start;
     background-attachment: fixed;
-    background-position: bottom center;
-    background-size: cover;
+    background-position: bottom;
+    background-size:cover;
     background-repeat: no-repeat;
+    background-position-y: 50px;
+    
+    
 }
-.main_04 dl dt {font-size: 38px; margin-bottom: 40px; font-family: 'Poppins', sans-serif; font-weight: 600;}
-.main_04 dl dd {font-size: 18px; margin-bottom: 40px;}
-.main_04 a {display: inline-block; padding: 15px 40px; border: 1px solid #fff; border-radius: 100px; font-size: 20px; color: #fff; box-sizing: border-box;font-family: 'Poppins', sans-serif; font-weight: normal; transition: 0.2s;}
+.main_04 dl dt {font-size: 50px; margin-bottom: 27px; font-family: 'Loto', sans-serif; font-weight: 600;}
+.main_04 dl dd {font-size: 24px; margin-bottom: 17px; font-weight: bold;}
+.main_04 a {display: inline-block; padding: 15px 40px; border: 1px solid lightblue; border-radius: 100px; font-size: 20px; color: black; box-sizing: border-box;font-family: 'Poppins', sans-serif; font-weight: normal; transition: 0.2s;}
 
 .main_04 a:hover {background: #fee101; color: #000; border: 1px solid #fee101;}
-
 
